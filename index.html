@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAGON</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="bg-wrapper">
+        <img src="C:\Users\sanch\Downloads\bg.gif" class="fullscreen-gif">
+        <div class="overlay-tint"></div>
+    </div>
+
+    <div id="overlay" class="entry-overlay">
+        <div class="enter-text">[ click to view ]</div>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="C:\Users\sanch\Downloads\lobat.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="card" id="profileCard">
+        <img src="C:\Users\sanch\Downloads\alols.jfif" alt="Avatar" class="profile-img">
+        <h1>Alor</h1>
+        <p>— chose the crown</p>
+
+        <div class="socials">
+            <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitch"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <script>
+        const overlay = document.getElementById('overlay');
+        const card = document.getElementById('profileCard');
+        const music = document.getElementById('bg-music');
+
+        overlay.addEventListener('click', () => {
+            music.play();
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                card.style.opacity = '1';
+                card.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
